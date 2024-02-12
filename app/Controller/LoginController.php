@@ -3,9 +3,13 @@ namespace App\Controller;
 
 use App\Model\User;
 use Base\AbstractController;
+use Base\RedirectException;
 
-class LoginLoginController extends AbstractController
+class LoginController extends AbstractController
 {
+    /**
+     * @throws RedirectException
+     */
     public function index()
     {
         if ($this->getUser()) {

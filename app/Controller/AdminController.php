@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Model\Message;
 use Base\AbstractController;
 
-class Admin extends AbstractController
+class AdminController extends AbstractController
 {
     public function preDispatch()
     {

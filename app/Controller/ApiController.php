@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Model\Message;
 use Base\AbstractController;
 
-class Api extends AbstractController
+class ApiController extends AbstractController
 {
     public function getUserMessages()
     {
