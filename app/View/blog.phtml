@@ -1,5 +1,5 @@
 <style>
-    .message { margin: 5px 0 0 5px; border: 1px solid black; width: 450px; min-height: 100px; }
+    .user { margin: 5px 0 0 5px; border: 1px solid black; width: 450px; min-height: 100px; }
     .author { margin-left: 10px; }
     .text { padding-left: 15px; padding-top: 15px; }
     .date { color: grey; font-size: 11px; }
@@ -8,8 +8,8 @@
 
 Список сообщений: <br>
 <?php
-/** @var $message \App\Model\Message */
-/** @var $user \App\Model\User */
+/** @var $message \App\Model\Eloquent\MessageEloquent*/
+/** @var $user \App\Model\Eloquent\UserEloquent */
 $user = $this->user;
 
 ?>

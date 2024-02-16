@@ -21,6 +21,13 @@ class View
         return $this->data[$name];
     }
 
+    public function assign($data)
+    {
+        foreach ($data as $key => $value) {
+            $this->data[$key] = $value;
+        }
+    }
+
     public function render(string $tpl, $data = []): string
     {
         foreach ($data as $key => $value){

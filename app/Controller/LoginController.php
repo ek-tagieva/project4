@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Model\User;
+use App\Model\Eloquent\UserEloquent;
 use Base\AbstractController;
 use Base\RedirectException;
 
@@ -29,12 +29,12 @@ class LoginController extends AbstractController
         $email = (string) $_POST['email'];
         $password = (string) $_POST['password'];
 
-        $user = User::getByEmail($email);
+        $user = UserEloquent::getByEmail($email);
         if(!$user) {
             return 'Неверный логин и пароль';
         }
 
-        if ($user->getPassword() !== User::getPasswordHash($password)) {
+        if ($user->getPassword() !== UserEloquent::getPasswordHash($password)) {
             return 'Неверный логин и пароль';
         }
 
@@ -74,13 +74,17 @@ class LoginController extends AbstractController
             'created_at' => date('Y-m-d H:i:s'),
         ];
 
-        $user = new User($userData);
+        $user = new UserEloquent($userData);
         $user->save();
 
         $this->session->authUser($user->getId());
 
-//        print_r($user->getId());die;
-
         $this->redirect('/blog');
+    }
+
+    public function logout()
+    {
+        $this->session->dropSession();
+        $this->redirect('/');
     }
 }

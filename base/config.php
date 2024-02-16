@@ -6,7 +6,7 @@ const DB_HOST = 'mysql_db:3306';
 const DB_PASSWORD = 'stage';
 const HOST_SITE = 'http://project4.loc';
 
-const ADMIN_IDS = [9];
+const ADMIN_IDS = [18];
 
 function d(...$args)
 {
